@@ -30,7 +30,7 @@ function render() {
   navItemsContainer.appendChild(time);
   navItemsContainer.appendChild(dayInformationContainer);
   dayInformationContainer.appendChild(dayInformationList);
-  dayInformationList.appendChild(items);
+ // dayInformationList.appendChild(items);
   container.appendChild(navbar);
 
   const mainSectionContainer = document.createElement("div");
