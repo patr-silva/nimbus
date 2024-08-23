@@ -5,11 +5,10 @@ async function launchController(controllerName) {
     const module = await import(`./controller/${controllerName}.js`);
     module.init();
   } catch (error) {
-    console.error(error);
+    console.error(`We are having problems at launch controller: ${error}`);
   }
 }
 
-/* 
 function setAnchorEventListener() {
   const anchors = document.querySelectorAll("a");
 
@@ -20,10 +19,9 @@ function setAnchorEventListener() {
     });
   });
 }
-*/
+
 function setCurrentRoute({ path, controller }) {
-  routes.currentPath.path = path;
-  routes.currentPath.controller = controller;
+  routes.currentPath = { path, controller };
 }
 
 function handlePopState({ state }) {
@@ -46,15 +44,19 @@ function navigate(path, firstLoad = false) {
     ? history.replaceState(route, "", route.path)
     : history.pushState(route, "", route.path);
 
+  console.log(`This is the route.controller: ${route.controller}`);
+
   launchController(route.controller);
 }
 
 function init() {
   const path = window.location.pathname;
 
+  console.log(`This is path from init: ${path}`);
+
   navigate(path, true);
   addEventListener("popstate", handlePopState);
-  //setAnchorEventListener();
+  setAnchorEventListener();
 }
 
 export default { init };

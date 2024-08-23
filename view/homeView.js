@@ -20,17 +20,19 @@ function render() {
   dayInformationList.className = "navbar-nav ms-auto";
 
   const sunriseItem = document.createElement("li");
+  sunriseItem.className = "nav-item nav-link";
   sunriseItem.innerText = "sunrise";
-  const sunsetItem = document.createElement("li");
-  sunsetItem.innerText = "sunset";
-  const items = document.querySelectorAll("li");
-  items.className = "nav-item nav-link";
+  dayInformationList.appendChild(sunriseItem);
 
-  navbar.appendChild(navItemsContainer);
+  const sunsetItem = document.createElement("li");
+  sunsetItem.className = "nav-item nav-link";
+  sunsetItem.innerText = "sunset";
+  dayInformationList.appendChild(sunsetItem);
+
   navItemsContainer.appendChild(time);
   navItemsContainer.appendChild(dayInformationContainer);
   dayInformationContainer.appendChild(dayInformationList);
- // dayInformationList.appendChild(items);
+  navbar.appendChild(navItemsContainer);
   container.appendChild(navbar);
 
   const mainSectionContainer = document.createElement("div");
@@ -49,15 +51,35 @@ function render() {
   title.innerText = "Nimbus";
   title.className = "mx-auto my-5 text-uppercase";
 
-  mainSectionElements.appendChild(titleContainer);
   titleContainer.appendChild(title);
+  mainSectionElements.appendChild(titleContainer);
   mainSection.appendChild(mainSectionElements);
+
+  const inputGroup = document.createElement("div");
+  inputGroup.className = "input-group rounded";
+
+  const input = document.createElement("input");
+  input.type = "search";
+  input.className = "form-control rounded";
+  input.placeholder = "City";
+  input.ariaLabel = "Search";
+  input.ariaDescribedby = "search-addon";
+
+  const inputGroupText = document.createElement("span");
+  inputGroupText.className = "input-group-text border-2 border-red";
+  inputGroupText.id = "search-addon";
+
+  const icon = document.createElement("i");
+  icon.className = "fas fa-search";
+  icon.innerText = "Search";
+
+  inputGroupText.appendChild(icon);
+  inputGroup.appendChild(input);
+  inputGroup.appendChild(inputGroupText);
+
+  mainSection.appendChild(inputGroup);
   mainSectionContainer.appendChild(mainSection);
-
-
-
-
-
+  container.appendChild(mainSectionContainer);
 }
 
 export default { render };
