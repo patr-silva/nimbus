@@ -2,6 +2,7 @@ function render() {
   const container = document.querySelector("#container");
   container.innerHTML = "";
 
+  /*
   const navbar = document.createElement("nav");
   navbar.className = "navbar navbar-expand-lg navbar-light fixed-top";
   navbar.setAttribute("id", "navbar");
@@ -34,6 +35,7 @@ function render() {
   dayInformationContainer.appendChild(dayInformationList);
   navbar.appendChild(navItemsContainer);
   container.appendChild(navbar);
+  */
 
   const mainSectionContainer = document.createElement("div");
   mainSectionContainer.className = "d-flex flex-column mb-3";
@@ -50,6 +52,7 @@ function render() {
   const title = document.createElement("h1");
   title.innerText = "Nimbus";
   title.className = "mx-auto my-5 text-uppercase";
+  title.setAttribute("id", "title");
 
   titleContainer.appendChild(title);
   mainSectionElements.appendChild(titleContainer);
@@ -60,18 +63,17 @@ function render() {
 
   const input = document.createElement("input");
   input.type = "search";
-  input.className = "form-control rounded";
-  input.placeholder = "City";
+  input.className = "search-input rounded";
+  input.placeholder = "";
   input.ariaLabel = "Search";
   input.ariaDescribedby = "search-addon";
 
   const inputGroupText = document.createElement("span");
-  inputGroupText.className = "input-group-text border-2 border-red";
+  inputGroupText.className = "input-group-text border-0";
   inputGroupText.id = "search-addon";
 
   const icon = document.createElement("i");
   icon.className = "fas fa-search";
-  icon.innerText = "Search";
 
   inputGroupText.appendChild(icon);
   inputGroup.appendChild(input);

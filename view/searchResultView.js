@@ -9,9 +9,15 @@ function render() {
   const navItemsContainer = document.createElement("div");
   navItemsContainer.className = "container px-4 px-lg-5";
 
+  const timeElementsContainer = document.createElement("div");
+  timeElementsContainer.className = "nav-elems-container";
+
+  const timeIcon = document.createElement("i");
+  timeIcon.className = "nav-icons fas fa-clock";
+
   const time = document.createElement("p");
   time.className = "time";
-  time.innerText = "time";
+  time.innerText = "22:50";
 
   const dayInformationContainer = document.createElement("div");
   dayInformationContainer.setAttribute("id", "navbarResponsive");
@@ -19,17 +25,37 @@ function render() {
   const dayInformationList = document.createElement("ul");
   dayInformationList.className = "navbar-nav ms-auto";
 
+  const sunriseElementsContainer = document.createElement("div");
+  sunriseElementsContainer.className = "nav-elems-container";
+
   const sunriseItem = document.createElement("li");
   sunriseItem.className = "nav-item nav-link";
-  sunriseItem.innerText = "sunrise";
-  dayInformationList.appendChild(sunriseItem);
+  sunriseItem.innerText = "05:00";
+
+  const sunriseIcon = document.createElement("i");
+  sunriseIcon.className = "nav-icons fas fa-mountain-sun";
+
+  sunriseItem.prepend(sunriseIcon);
+  sunriseElementsContainer.appendChild(sunriseItem);
+  dayInformationList.appendChild(sunriseElementsContainer);
+
+  const sunsetElementsContainer = document.createElement("div");
+  sunsetElementsContainer.className = "nav-elems-container";
 
   const sunsetItem = document.createElement("li");
   sunsetItem.className = "nav-item nav-link";
-  sunsetItem.innerText = "sunset";
-  dayInformationList.appendChild(sunsetItem);
+  sunsetItem.innerText = "20:00";
 
-  navItemsContainer.appendChild(time);
+  const sunsetIcon = document.createElement("i");
+  sunsetIcon.className = "nav-icons fas fa-cloud-moon";
+
+  sunsetItem.prepend(sunsetIcon);
+  sunsetElementsContainer.appendChild(sunsetItem);
+  dayInformationList.appendChild(sunsetElementsContainer);
+
+  timeElementsContainer.appendChild(timeIcon);
+  timeElementsContainer.appendChild(time);
+  navItemsContainer.appendChild(timeElementsContainer);
   navItemsContainer.appendChild(dayInformationContainer);
   dayInformationContainer.appendChild(dayInformationList);
   navbar.appendChild(navItemsContainer);
