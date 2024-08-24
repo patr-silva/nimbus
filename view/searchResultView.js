@@ -3,61 +3,65 @@ function render() {
   container.innerHTML = "";
 
   const navbar = document.createElement("nav");
-  navbar.className = "navbar navbar-expand-lg navbar-light fixed-top";
+  navbar.className = "navbar navbar-expand-lg";
   navbar.setAttribute("id", "navbar");
 
   const navItemsContainer = document.createElement("div");
-  navItemsContainer.className = "container px-4 px-lg-5";
+  navItemsContainer.className = "container container-fluid";
+
+  const leftNavbar = document.createElement("div");
+  leftNavbar.className = "navbar-left";
 
   const timeElementsContainer = document.createElement("div");
-  timeElementsContainer.className = "nav-elems-container";
+  timeElementsContainer.className = "navbar-item d-flex align-items-center";
 
   const timeIcon = document.createElement("i");
-  timeIcon.className = "nav-icons fas fa-clock";
+  timeIcon.className = "fas fa-clock mr-2";
 
   const time = document.createElement("p");
   time.className = "time";
   time.innerText = "22:50";
 
-  const dayInformationContainer = document.createElement("div");
-  dayInformationContainer.setAttribute("id", "navbarResponsive");
-
-  const dayInformationList = document.createElement("ul");
-  dayInformationList.className = "navbar-nav ms-auto";
+  const rightNavbar = document.createElement("div");
+  rightNavbar.className = "ml-auto d-flex";
 
   const sunriseElementsContainer = document.createElement("div");
-  sunriseElementsContainer.className = "nav-elems-container";
+  sunriseElementsContainer.className =
+    "navbar-item d-flex align-items-center mr-4";
 
-  const sunriseItem = document.createElement("li");
-  sunriseItem.className = "nav-item nav-link";
+  const sunriseItem = document.createElement("span");
+  sunriseItem.className = "time";
   sunriseItem.innerText = "05:00";
 
   const sunriseIcon = document.createElement("i");
-  sunriseIcon.className = "nav-icons fas fa-mountain-sun";
-
-  sunriseItem.prepend(sunriseIcon);
-  sunriseElementsContainer.appendChild(sunriseItem);
-  dayInformationList.appendChild(sunriseElementsContainer);
+  sunriseIcon.className = "fas fa-mountain-sun mr-2";
 
   const sunsetElementsContainer = document.createElement("div");
-  sunsetElementsContainer.className = "nav-elems-container";
+  sunsetElementsContainer.className = sunriseElementsContainer.className =
+    "navbar-item d-flex align-items-center mr-4";
 
-  const sunsetItem = document.createElement("li");
-  sunsetItem.className = "nav-item nav-link";
+  const sunsetItem = document.createElement("span");
+  sunsetItem.className = "time";
   sunsetItem.innerText = "20:00";
 
   const sunsetIcon = document.createElement("i");
-  sunsetIcon.className = "nav-icons fas fa-cloud-moon";
-
-  sunsetItem.prepend(sunsetIcon);
-  sunsetElementsContainer.appendChild(sunsetItem);
-  dayInformationList.appendChild(sunsetElementsContainer);
+  sunsetIcon.className = "fas fa-cloud-moon mr-2";
 
   timeElementsContainer.appendChild(timeIcon);
   timeElementsContainer.appendChild(time);
-  navItemsContainer.appendChild(timeElementsContainer);
-  navItemsContainer.appendChild(dayInformationContainer);
-  dayInformationContainer.appendChild(dayInformationList);
+  leftNavbar.appendChild(timeElementsContainer);
+  navItemsContainer.appendChild(leftNavbar);
+
+  sunriseElementsContainer.appendChild(sunriseIcon);
+  sunriseElementsContainer.appendChild(sunriseItem);
+  rightNavbar.appendChild(sunriseElementsContainer);
+
+  sunsetElementsContainer.appendChild(sunsetIcon);
+  sunsetElementsContainer.appendChild(sunsetItem);
+  rightNavbar.appendChild(sunsetElementsContainer);
+
+  navItemsContainer.appendChild(rightNavbar);
+
   navbar.appendChild(navItemsContainer);
   container.appendChild(navbar);
 
