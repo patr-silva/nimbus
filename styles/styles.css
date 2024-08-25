@@ -73,8 +73,9 @@ body {
 .fas {
   color: aliceblue;
   font-weight: 900;
-  padding: 0.9rem 0;
+  padding: 0.9rem 0.4rem;
   line-height: unset;
+  font-size: x-large;
 }
 
 @media (min-width: 992px) {
@@ -121,4 +122,26 @@ body {
 .input-group i {
   color: aliceblue;
   font-size: x-large;
+}
+
+#location-heading{
+  font-size: 2rem;
+}
+
+#weather-icon{
+  font-size: 3rem;
+}
+
+#values-container{
+  display: flex;
+  flex-direction: row;
+
+}
+
+#values-container h1{
+  font-size: 2rem;
+}
+
+#main-section{
+  margin-top: -6rem;;
 }

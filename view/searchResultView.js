@@ -13,12 +13,12 @@ function render() {
   leftNavbar.className = "navbar-left";
 
   const timeElementsContainer = document.createElement("div");
-  timeElementsContainer.className = "navbar-item d-flex align-items-center";
+  timeElementsContainer.className = "navbar-item d-flex align-items-center mr-4";
 
   const timeIcon = document.createElement("i");
   timeIcon.className = "fas fa-clock mr-2";
 
-  const time = document.createElement("p");
+  const time = document.createElement("span");
   time.className = "time";
   time.innerText = "22:50";
 
@@ -107,13 +107,14 @@ function render() {
 
   const valuesContainer = document.createElement("div");
   valuesContainer.className = "text-center";
+  valuesContainer.setAttribute("id", "values-container");
 
   const maxTemperatureHeading = document.createElement("h1");
-  maxTemperatureHeading.className = "mx-auto my-5 text-uppercase";
+  maxTemperatureHeading.className = "mx-3 my-3 text-uppercase";
   maxTemperatureHeading.innerText = "Max";
 
   const minTemperatureHeading = document.createElement("h1");
-  minTemperatureHeading.className = "mx-auto my-5 text-uppercase";
+  minTemperatureHeading.className = "mx-3 my-3 text-uppercase";
   minTemperatureHeading.innerText = "Min";
 
   valuesContainer.appendChild(maxTemperatureHeading);
