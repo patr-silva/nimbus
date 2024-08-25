@@ -67,21 +67,27 @@ function render() {
 
   const mainSectionContainer = document.createElement("div");
   mainSectionContainer.className = "d-flex flex-column mb-3";
+  mainSectionContainer.setAttribute("id", "main-section-container");
 
   const mainSection = document.createElement("section");
   mainSection.className = "main-section";
+  mainSection.setAttribute("id", "main-section");
 
   const mainSectionElements = document.createElement("div");
   mainSectionElements.className = "d-flex justify-content-center flex-column";
+  mainSectionElements.setAttribute("id", "main-section-elements");
 
   const locationContainer = document.createElement("div");
   locationContainer.className = "d-flex justify-content-center flex-column";
+  locationContainer.setAttribute("id", "location-container");
 
   const headingContainer = document.createElement("div");
   headingContainer.className = "text-center";
+  headingContainer.setAttribute("id", "heading-container");
 
   const locationHeading = document.createElement("h1");
   locationHeading.className = "mx-auto my-5 text-uppercase";
+  locationHeading.setAttribute("id", "location-heading");
   locationHeading.innerText = "Location";
 
   headingContainer.appendChild(locationHeading);
