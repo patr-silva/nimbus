@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "SPA ",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/patr-silva/nimbus/issues"
   },
-  "homepage": "https://github.com/patr-silva/nimbus#readme"
+  "homepage": "https://github.com/patr-silva/nimbus#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }
