@@ -2,41 +2,6 @@ function render() {
   const container = document.querySelector("#container");
   container.innerHTML = "";
 
-  /*
-  const navbar = document.createElement("nav");
-  navbar.className = "navbar navbar-expand-lg navbar-light fixed-top";
-  navbar.setAttribute("id", "navbar");
-
-  const navItemsContainer = document.createElement("div");
-  navItemsContainer.className = "container px-4 px-lg-5";
-
-  const time = document.createElement("p");
-  time.className = "time";
-  time.innerText = "time";
-
-  const dayInformationContainer = document.createElement("div");
-  dayInformationContainer.setAttribute("id", "navbarResponsive");
-
-  const dayInformationList = document.createElement("ul");
-  dayInformationList.className = "navbar-nav ms-auto";
-
-  const sunriseItem = document.createElement("li");
-  sunriseItem.className = "nav-item nav-link";
-  sunriseItem.innerText = "sunrise";
-  dayInformationList.appendChild(sunriseItem);
-
-  const sunsetItem = document.createElement("li");
-  sunsetItem.className = "nav-item nav-link";
-  sunsetItem.innerText = "sunset";
-  dayInformationList.appendChild(sunsetItem);
-
-  navItemsContainer.appendChild(time);
-  navItemsContainer.appendChild(dayInformationContainer);
-  dayInformationContainer.appendChild(dayInformationList);
-  navbar.appendChild(navItemsContainer);
-  container.appendChild(navbar);
-  */
-
   const mainSectionContainer = document.createElement("div");
   mainSectionContainer.className = "d-flex flex-column mb-3";
 

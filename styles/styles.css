@@ -63,7 +63,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-
 }
 
 .navbar {
@@ -78,19 +77,20 @@ body {
   line-height: unset;
 }
 
-
 @media (min-width: 992px) {
-  #navbar .time{
+  #navbar .time {
     padding: 2rem 0.5rem;
   }
 }
 
 .main-section {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   width: 100vw;
   height: 100vh;
   min-height: 35rem;
-  padding: 3rem 0;
 }
 
 .main-section h1,
@@ -104,10 +104,12 @@ body {
 
 .input-group {
   justify-content: center;
+  align-items: center;
 }
 
 .search-input {
   width: 25%;
+  height: 35%;
   border-radius: 50px !important;
   border-color: transparent;
 }
