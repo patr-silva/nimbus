@@ -26,7 +26,7 @@ This app is designed to provide users with real-time weather information for any
 This project was undertaken as a practical exercise to deepen my understanding of front-end web development using JavaScript, HTML, CSS, and Bootstrap. 
 The development of Nimbus allowed me to gain hands-on experience in building a single-page application that consumes an external weather API to deliver real-time data.
 
-Looking forward, I plan to enhance Nimbus by integrating additional features such as a 7-day weather forecast, air quality index, and potentially a historical weather data feature. These enhancements will provide users with a more comprehensive understanding of the weather in their selected locations, further improving the utility and user experience of the application.
+Looking forward, I plan to enhance Nimbus by integrating additional features such as a 7-day weather forecast. These enhancements will provide users with a more comprehensive understanding of the weather in their selected locations, further improving the utility and user experience of the application.
 
 <h2 id="built">Built with</h2>
 
