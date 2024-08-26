@@ -124,24 +124,27 @@ body {
   font-size: x-large;
 }
 
-#location-heading{
+#location-heading {
   font-size: 2rem;
 }
 
-#weather-icon{
+#weather-icon {
   font-size: 3rem;
 }
 
-#values-container{
+#values-container {
   display: flex;
   flex-direction: row;
-
 }
 
-#values-container h1{
+#values-container h1 {
   font-size: 2rem;
 }
 
-#main-section{
-  margin-top: -6rem;;
+#main-section {
+  margin-top: -6rem;
+}
+
+#search-addon {
+background-color: transparent;
 }

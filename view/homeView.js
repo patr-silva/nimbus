@@ -23,26 +23,29 @@ function render() {
   mainSectionElements.appendChild(titleContainer);
   mainSection.appendChild(mainSectionElements);
 
-  const inputGroup = document.createElement("div");
+  const inputGroup = document.createElement("form");
   inputGroup.className = "input-group rounded";
+  inputGroup.setAttribute("id", "search-form");
 
   const input = document.createElement("input");
   input.type = "search";
   input.className = "search-input rounded";
-  input.placeholder = "";
+  input.setAttribute("id", "search-input");
+  input.placeholder = "search";
   input.ariaLabel = "Search";
   input.ariaDescribedby = "search-addon";
 
-  const inputGroupText = document.createElement("span");
-  inputGroupText.className = "input-group-text border-0";
-  inputGroupText.id = "search-addon";
+  const inputBtn = document.createElement("button");
+  inputBtn.type = "submit";
+  inputBtn.className = "input-group-text border-0";
+  inputBtn.id = "search-addon";
 
   const icon = document.createElement("i");
   icon.className = "fas fa-search";
 
-  inputGroupText.appendChild(icon);
+  inputBtn.appendChild(icon);
   inputGroup.appendChild(input);
-  inputGroup.appendChild(inputGroupText);
+  inputGroup.appendChild(inputBtn);
 
   mainSection.appendChild(inputGroup);
   mainSectionContainer.appendChild(mainSection);
