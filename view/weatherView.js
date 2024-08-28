@@ -1,6 +1,35 @@
-function render() {
+function render(weatherData) {
   const container = document.querySelector("#container");
   container.innerHTML = "";
+
+  console.log("I'm the weatherView and this what I received: " + weatherData);
+
+  const currentUnixTime = weatherData.currentUnixTime;
+  const currentTime = new Date(currentUnixTime * 1000);
+
+  const currentHours = currentTime.getHours();
+  const currentMinutes = currentTime.getMinutes();
+  const timeFormatted = `${currentHours
+    .toString()
+    .padStart(2, "0")}:${currentMinutes.toString().padStart(2, "0")}`;
+
+  const sunriseUnixTime = weatherData.sunriseUnixTime;
+  const sunriseTime = new Date(sunriseUnixTime * 1000);
+
+  const sunriseHours = sunriseTime.getHours();
+  const sunriseMinutes = sunriseTime.getMinutes();
+  const sunriseFormatted = `${sunriseHours
+    .toString()
+    .padStart(2, "0")}:${sunriseMinutes.toString().padStart(2, "0")}`;
+
+  const sunsetUnixTime = weatherData.sunsetUnixTime;
+  const sunsetTime = new Date(sunsetUnixTime * 1000);
+
+  const sunsetHours = sunsetTime.getHours();
+  const sunsetMinutes = sunsetTime.getMinutes();
+  const sunsetFormatted = `${sunsetHours
+    .toString()
+    .padStart(2, "0")}:${sunsetMinutes.toString().padStart(2, "0")}`;
 
   const navbar = document.createElement("nav");
   navbar.className = "navbar navbar-expand-lg";
@@ -13,14 +42,15 @@ function render() {
   leftNavbar.className = "navbar-left";
 
   const timeElementsContainer = document.createElement("div");
-  timeElementsContainer.className = "navbar-item d-flex align-items-center mr-4";
+  timeElementsContainer.className =
+    "navbar-item d-flex align-items-center mr-4";
 
   const timeIcon = document.createElement("i");
   timeIcon.className = "fas fa-clock mr-2";
 
   const time = document.createElement("span");
   time.className = "time";
-  time.innerText = "22:50";
+  time.innerText = timeFormatted;
 
   const rightNavbar = document.createElement("div");
   rightNavbar.className = "ml-auto d-flex";
@@ -31,7 +61,7 @@ function render() {
 
   const sunriseItem = document.createElement("span");
   sunriseItem.className = "time";
-  sunriseItem.innerText = "05:00";
+  sunriseItem.innerText = sunriseFormatted;
 
   const sunriseIcon = document.createElement("i");
   sunriseIcon.className = "fas fa-mountain-sun mr-2";
@@ -42,7 +72,7 @@ function render() {
 
   const sunsetItem = document.createElement("span");
   sunsetItem.className = "time";
-  sunsetItem.innerText = "20:00";
+  sunsetItem.innerText = sunsetFormatted;
 
   const sunsetIcon = document.createElement("i");
   sunsetIcon.className = "fas fa-cloud-moon mr-2";
@@ -86,9 +116,9 @@ function render() {
   headingContainer.setAttribute("id", "heading-container");
 
   const locationHeading = document.createElement("h1");
-  locationHeading.className = "mx-auto my-5 text-uppercase";
+  locationHeading.className = "mx-auto my-3 text-uppercase";
   locationHeading.setAttribute("id", "location-heading");
-  locationHeading.innerText = "Location";
+  locationHeading.innerText = weatherData.city;
 
   headingContainer.appendChild(locationHeading);
   locationContainer.appendChild(headingContainer);
@@ -98,9 +128,13 @@ function render() {
   const weatherIconContainer = document.createElement("div");
   weatherIconContainer.className = "text-center";
 
-  const weatherIcon = document.createElement("h1");
-  weatherIcon.className = "mx-auto my-5 text-uppercase";
-  weatherIcon.innerText = "icon";
+  const weatherIcon = document.createElement("img");
+  weatherIcon.className = "mx-auto my-3";
+  weatherIcon.src = `http://openweathermap.org/img/wn/${weatherData.iconCode}@2x.png`;
+  weatherIcon.alt = "Weather Icon";
+
+  const minTemp = Math.round(weatherData.minTemp);
+  const maxTemp = Math.round(weatherData.maxTemp);
 
   const temperatureContainer = document.createElement("div");
   temperatureContainer.className = "d-flex justify-content-center";
@@ -111,11 +145,11 @@ function render() {
 
   const maxTemperatureHeading = document.createElement("h1");
   maxTemperatureHeading.className = "mx-3 my-3 text-uppercase";
-  maxTemperatureHeading.innerText = "Max";
+  maxTemperatureHeading.innerText = `${maxTemp}°C`;
 
   const minTemperatureHeading = document.createElement("h1");
   minTemperatureHeading.className = "mx-3 my-3 text-uppercase";
-  minTemperatureHeading.innerText = "Min";
+  minTemperatureHeading.innerText = `${minTemp}°C`;
 
   valuesContainer.appendChild(maxTemperatureHeading);
   valuesContainer.appendChild(minTemperatureHeading);

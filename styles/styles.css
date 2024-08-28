@@ -100,7 +100,7 @@ body {
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
   font-weight: 700;
-  color: aliceblue;
+  color: white;
 }
 
 .input-group {
@@ -113,6 +113,7 @@ body {
   height: 35%;
   border-radius: 50px !important;
   border-color: transparent;
+  font-size: smaller;
 }
 
 .input-group span {
@@ -145,6 +146,7 @@ body {
   margin-top: -6rem;
 }
 
-#search-addon {
-background-color: transparent;
+#search-btn {
+  background-color: transparent;
+  border: none;
 }

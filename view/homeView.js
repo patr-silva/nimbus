@@ -1,3 +1,5 @@
+import { getWeatherData } from "../services/weatherService.js";
+
 function render() {
   const container = document.querySelector("#container");
   container.innerHTML = "";
@@ -23,22 +25,23 @@ function render() {
   mainSectionElements.appendChild(titleContainer);
   mainSection.appendChild(mainSectionElements);
 
-  const inputGroup = document.createElement("form");
+  const inputGroup = document.createElement("div");
   inputGroup.className = "input-group rounded";
-  inputGroup.setAttribute("id", "search-form");
+  //inputGroup.setAttribute("id", "search-form");
 
   const input = document.createElement("input");
   input.type = "search";
   input.className = "search-input rounded";
   input.setAttribute("id", "search-input");
-  input.placeholder = "search";
+  input.placeholder = `${"  "} Search`;
   input.ariaLabel = "Search";
   input.ariaDescribedby = "search-addon";
 
   const inputBtn = document.createElement("button");
-  inputBtn.type = "submit";
+  inputBtn.setAttribute("id", "search-btn");
+  //inputBtn.type = "submit";
   inputBtn.className = "input-group-text border-0";
-  inputBtn.id = "search-addon";
+  //inputBtn.id = "search-addon";
 
   const icon = document.createElement("i");
   icon.className = "fas fa-search";
@@ -50,6 +53,14 @@ function render() {
   mainSection.appendChild(inputGroup);
   mainSectionContainer.appendChild(mainSection);
   container.appendChild(mainSectionContainer);
+
+  inputBtn.addEventListener("click", () => {
+    const location = input.value;
+    if (location) {
+      console.log("This is location: " + location);
+      getWeatherData(location);
+    }
+  });
 }
 
 export default { render };

@@ -11,7 +11,6 @@ async function launchController(controllerName) {
 
 function setAnchorEventListener() {
   const anchors = document.querySelectorAll("a");
-
   anchors.forEach((elem) => {
     elem.addEventListener("click", (e) => {
       e.preventDefault();
@@ -44,16 +43,14 @@ function navigate(path, firstLoad = false) {
     ? history.replaceState(route, "", route.path)
     : history.pushState(route, "", route.path);
 
-  console.log(`This is the route.controller: ${route.controller}`);
+  //console.log(`This is the route.controller: ${route.controller}`);
 
   launchController(route.controller);
 }
 
 function init() {
   const path = window.location.pathname;
-
-  console.log(`This is path from init: ${path}`);
-
+  //console.log(`This is path from init: ${path}`);
   navigate(path, true);
   addEventListener("popstate", handlePopState);
   setAnchorEventListener();

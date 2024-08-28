@@ -1,16 +1,34 @@
-//https://api.openweathermap.org/data/2.5/weather? lat=51.508&lon=-0.126&appid={API key}
+import weatherView from "../view/weatherView.js";
 
-async function getWeatherData(lat, lon) {
-  const url = `/api/weather?lat=${lat}&lon=${lon}`;
+const apiKey = "";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
+
+async function getWeatherData(location) {
+  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
 
   try {
-    const response = await axios.get(url);
-    console.log("getWeatherData response: " + response.data);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Something went wrong fetching the weather data!");
+    }
 
-    return response.data;
-    
+    const data = await response.json();
+
+    console.log(data.main.temp);
+
+    const weatherData = {
+      city: data.name,
+      minTemp: data.main.temp_min,
+      maxTemp: data.main.temp_max,
+      sunriseUnixTime: data.sys.sunrise,
+      sunsetUnixTime: data.sys.sunset,
+      currentUnixTime: data.dt,
+      iconCode: data.weather[0].icon,
+    };
+
+    weatherView.render(weatherData);
   } catch (error) {
-    console.error("Error fetching weather data: ", error);
+    console.error("Error fetching weather data:", error);
   }
 }
 
