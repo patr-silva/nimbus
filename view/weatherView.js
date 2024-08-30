@@ -160,8 +160,43 @@ function render(weatherData) {
   mainSectionElements.appendChild(weatherIconContainer);
   mainSectionElements.appendChild(temperatureContainer);
 
+  const footer = document.createElement("footer");
+  footer.className = "text-white text-center py-4 mt-4";
+
+  const footerContainer = document.createElement("div");
+  footerContainer.className = "container";
+
+  // Create a row div
+  const row = document.createElement("div");
+  row.className = "row";
+
+  // Create another column for the anchor
+  const colAnchor = document.createElement("div");
+  colAnchor.className = "col text-right";
+
+  // Add an anchor element
+  const anchor = document.createElement("a");
+  anchor.href = "#";
+  anchor.className = "text-white home";
+  anchor.innerHTML = "Home";
+  colAnchor.appendChild(anchor);
+
+  // Append the text column and anchor column to the row
+  row.appendChild(colAnchor);
+
+  // Append the row to the container
+  footerContainer.appendChild(row);
+
+  // Append the container to the footer
+  footer.appendChild(footerContainer);
+
+  // Append the footer to the body
+
   mainSection.appendChild(mainSectionElements);
+  mainSection.appendChild(footer);
   mainSectionContainer.appendChild(mainSection);
+  //mainSectionContainer.appendChild(footer);
+
   container.appendChild(mainSectionContainer);
 }
 
