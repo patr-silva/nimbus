@@ -50,3 +50,5 @@ Looking forward, I plan to enhance Nimbus by integrating additional features suc
    2.2 Right click on the file and select "Open with live server";
 
 <h1 id="screenshots">Screenshots</h1>
+<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/9a1deefc-918b-4d3c-8785-7301c631a5e5">
+<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/d38a3087-ea39-4c9c-8ec1-9e28d1d567f9">
