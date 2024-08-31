@@ -1,6 +1,7 @@
 import weatherView from "../view/weatherView.js";
+import router from "../router.js";
 
-const apiKey = "";
+const apiKey = "6f5a4d78d205cc01c0d4c209e5e59732";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 
 async function getWeatherData(location) {
@@ -28,6 +29,7 @@ async function getWeatherData(location) {
 
     weatherView.render(weatherData);
   } catch (error) {
+    router.navigate("/error");
     console.error("Error fetching weather data:", error);
   }
 }
