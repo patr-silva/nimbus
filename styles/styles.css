@@ -150,3 +150,7 @@ body {
   background-color: transparent;
   border: none;
 }
+
+#message {
+  color: aliceblue;
+}

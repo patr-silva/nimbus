@@ -21,7 +21,7 @@ function render() {
 
   const message = document.createElement("h3");
   message.innerText = "Please, try again later.";
-  message.className = "mx-auto my-5 text-uppercase";
+  message.className = "mx-auto my-5 merriweather-regular";
   message.setAttribute("id", "message");
 
   titleContainer.appendChild(title);
