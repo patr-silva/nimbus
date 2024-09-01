@@ -13,7 +13,6 @@ Nimbus is a single-page weather application built using JavaScript, HTML, CSS, a
     * [Built with](#built)
 2. [Installation](#installation)
    * [Installation Steps](#installation)
-   * [Commands](#commands)
 3. [Screenshots](#screenshots)
 
 <h1 id="introduction">Introduction</h1>
@@ -40,7 +39,7 @@ Looking forward, I plan to enhance Nimbus by integrating additional features suc
 
 1. Clone the client repository
    ```sh
-   git clone https://github.com/patr-silva/nimbus
+   git clone https://github.com/patr-silva/nimbus.git
    ```
 
 2. Navigate to the project directory
@@ -55,7 +54,8 @@ Looking forward, I plan to enhance Nimbus by integrating additional features suc
    ```sh
    npm run dev
    ```
-
+   
 <h1 id="screenshots">Screenshots</h1>
-<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/9a1deefc-918b-4d3c-8785-7301c631a5e5">
-<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/d38a3087-ea39-4c9c-8ec1-9e28d1d567f9">
+<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/0dc06e38-b914-4d6f-ac1a-f04e4db1d35c">
+<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/c4d9013c-52ec-4076-a33a-f054abbca42a">
+<img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/2550d560-b7d1-43ca-bf36-ec0dfef5ca42">
