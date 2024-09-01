@@ -1,8 +1,10 @@
 import { getWeatherData } from "../services/weatherService.js";
 
 function render() {
+  const randomBg = Math.floor(Math.random() * 6)+1;
   const container = document.querySelector("#container");
   container.innerHTML = "";
+  container.style.backgroundImage = `url(../styles/images/${randomBg}.jpg)`;
 
   const mainSectionContainer = document.createElement("div");
   mainSectionContainer.className = "d-flex flex-column mb-3";

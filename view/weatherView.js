@@ -1,6 +1,8 @@
 function render(weatherData) {
+  const randomBg = Math.floor(Math.random() * 6) + 1;
   const container = document.querySelector("#container");
   container.innerHTML = "";
+  container.style.backgroundImage = `url(../styles/images/${randomBg}.jpg)`;
 
   console.log("I'm the weatherView and this what I received: " + weatherData);
 
