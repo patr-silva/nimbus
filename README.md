@@ -43,11 +43,18 @@ Looking forward, I plan to enhance Nimbus by integrating additional features suc
    git clone https://github.com/patr-silva/nimbus
    ```
 
-2. Run the Application Using Live Server:
-   
-   2.1 Open the "document.html" file;
-   
-   2.2 Right click on the file and select "Open with live server";
+2. Navigate to the project directory
+   ```sh
+   cd weather-app
+   ```
+3. Install dependencies
+   ```sh
+   npm install
+   ```
+4. Start the development server
+   ```sh
+   npm run dev
+   ```
 
 <h1 id="screenshots">Screenshots</h1>
 <img width="440" alt="Homepage" src="https://github.com/user-attachments/assets/9a1deefc-918b-4d3c-8785-7301c631a5e5">
